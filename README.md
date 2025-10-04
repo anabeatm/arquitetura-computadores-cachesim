@@ -48,7 +48,7 @@ Para garantir que a Cache L1 tenha sempre 32 KB, o número de Sets (`<sets>`) fo
 
 ## 💻 Execução dos Testes
 
-O experimento total consiste em **40 execuções** (4 Assocs x 4 Buffers x 2 Padrões de Acesso: `sequential` e `random`).
+O experimento total consiste em **32 execuções** (4 Assocs x 4 Buffers x 2 Padrões de Acesso: `sequential` e `random`).
 
 ### 1. Valores Variáveis de Buffer Size
 
