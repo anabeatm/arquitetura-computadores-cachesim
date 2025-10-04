@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# --- Configurações Fixas ---
+ACCESS_COUNT=10000
+STRIDE=8192
+WRITE_RATIO=50
+OUTPUT_DIR="Logs_Completos"
+
+
+XML_FILES=("assoc_1.xml" "assoc_2.xml" "assoc_4.xml" "assoc_8.xml")
+BUFFER_SIZES=("16384" "24576" "32768" "49152" "65536")
+ACCESS_TYPES=("sequential" "random")
+
+echo "Iniciando 32 simulações. Logs completos serão salvos em $OUTPUT_DIR/..."
+echo "Pode demorar um pouco. Aguarde..."
+echo "--------------------------------------------------------"
+
+
+for XML in "${XML_FILES[@]}"; do
+    ASSOC=$(echo "$XML" | cut -d'_' -f2 | cut -d'.' -f1)
+    
+    for BUF_SIZE in "${BUFFER_SIZES[@]}"; do
+        
+
+        OUTPUT_NAME="${OUTPUT_DIR}/log_assoc${ASSOC}_buf${BUF_SIZE}_sequential.txt"
+        COMMAND_SEQ="./cache-sim.exe XML_Configs/$XML sequential $ACCESS_COUNT $BUF_SIZE $STRIDE $WRITE_RATIO"
+        echo "Executando SEQ: $OUTPUT_NAME"
+        $COMMAND_SEQ > "$OUTPUT_NAME"
+        
+
+        OUTPUT_NAME="${OUTPUT_DIR}/log_assoc${ASSOC}_buf${BUF_SIZE}_random.txt"
+        COMMAND_RAND="./cache-sim.exe XML_Configs/$XML random $ACCESS_COUNT $BUF_SIZE $WRITE_RATIO"
+        echo "Executando RAND: $OUTPUT_NAME"
+        $COMMAND_RAND > "$OUTPUT_NAME"
+            
+    done
+done
+
+echo "--------------------------------------------------------"
+echo "Todos os logs foram salvos na pasta $OUTPUT_DIR."
+echo "Você pode analisar os resultados e extrair os dados necessários."
