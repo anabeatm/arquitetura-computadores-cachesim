@@ -13,7 +13,7 @@ Este repositório contém os arquivos de configuração, o executável do simula
 O experimento foi projetado como um estudo bidimensional, variando os seguintes parâmetros:
 
 1.  **Associatividade (Estrutura da Cache):** 1-way, 2-way, 4-way e 8-way.
-2.  **Buffer Size (Carga de Trabalho):** 16 KB, 24 KB, 32 KB, 49KB e 65KB.
+2.  **Buffer Size (Carga de Trabalho):** 8KB, 16 KB, 32 KB e 65KB.
 
 ### Hipótese
 
@@ -54,10 +54,10 @@ O experimento total consiste em **40 execuções** (4 Assocs x 5 Buffers x 2 Pad
 
 | % da Cache | Tamanho em Bytes | Valor no Comando |
 | :--- | :--- | :--- |
+| **25%** | 8.192 | 8192 |
 | **50%** | 16.384 | 16384 |
 | **75%** | 24.576 | 24576 |
 | **100%** | 32.768 | 32768 |
-| **150%** | 49.152 | 49152 |
 | **200%** | 65.536 | 65536 |
 
 ### 2. Formato do Comando de Execução

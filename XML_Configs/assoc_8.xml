@@ -6,7 +6,7 @@
     <element type="cache">
         <name>L1Cache</name>
         <sets>64</sets>
-        <assoc>1</assoc>  
+        <assoc>8</assoc>  
         <linesize>64</linesize>
         <writepolicy>write_back</writepolicy>
         <latency>1</latency>

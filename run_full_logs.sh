@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# --- Configurações Fixas ---
 ACCESS_COUNT=10000
 STRIDE=8192
 WRITE_RATIO=50
@@ -8,10 +7,10 @@ OUTPUT_DIR="Logs_Completos"
 
 
 XML_FILES=("assoc_1.xml" "assoc_2.xml" "assoc_4.xml" "assoc_8.xml")
-BUFFER_SIZES=("16384" "24576" "32768" "49152" "65536")
+BUFFER_SIZES=("16384" "24576" "32768" "65536")
 ACCESS_TYPES=("sequential" "random")
 
-echo "Iniciando 32 simulações. Logs completos serão salvos em $OUTPUT_DIR/..."
+echo "Iniciando 40 simulações. Logs completos serão salvos em $OUTPUT_DIR/..."
 echo "Pode demorar um pouco. Aguarde..."
 echo "--------------------------------------------------------"
 
@@ -38,4 +37,3 @@ done
 
 echo "--------------------------------------------------------"
 echo "Todos os logs foram salvos na pasta $OUTPUT_DIR."
-echo "Você pode analisar os resultados e extrair os dados necessários."
