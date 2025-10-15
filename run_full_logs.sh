@@ -7,7 +7,7 @@ OUTPUT_DIR="Logs_Completos"
 
 
 XML_FILES=("assoc_1.xml" "assoc_2.xml" "assoc_4.xml" "assoc_8.xml")
-BUFFER_SIZES=("16384" "24576" "32768" "65536")
+BUFFER_SIZES=("8192" "16384" "24576" "32768" "65536")
 ACCESS_TYPES=("sequential" "random")
 
 echo "Iniciando 40 simulações. Logs completos serão salvos em $OUTPUT_DIR/..."
