@@ -1,0 +1,21 @@
+XML [XML_Configs/assoc_1.xml] parsed without errors]
+Element main_memory
+created MainMemory named MainMemory latency 200
+Element cache
+created cache L1Cache size 32768 sets 512 [set_bits 9] assoc 1 line_size 64 [line_bits 6] [tag_bits 17] latency 1 write_policy WriteBack
+generating 10000000 random accesses with buffer size 65536 write ratio 50
+-------------------------------
+total time required (cycles): 1677177600
+-------------------------------
+Statitics of L1Cache
+L1Cache.size 32768
+L1Cache.read_accesses 4997345
+L1Cache.write_accesses 5002655
+L1Cache.total_accesses 10000000
+L1Cache.misses 5001516
+L1Cache.miss_ratio 0.5002
+-------------------------------
+Statitics of MainMemory
+MainMemory.read_accesses 5001516
+MainMemory.write_accesses 3334372
+MainMemory.total_accesses 8335888
