@@ -61,6 +61,25 @@ Para forçar a cache a falhar e expor suas fraquezas, usamos parâmetros extremo
 
 ## 5. Resultados
 
+Após a execução dos logs, usamos o script em python para gerar:
+
+1. Os gráficos separados entre `miss_ratio` e `cycles`, cada um mostrando como foi o desempenho para cada associatividade e tipo de acesso.
+2. Dois gráficos gerais que mostram o desempenho para `miss_ratio vs buffer_size` e outro `total_cycles vs buffer_size`.
+
+###### O que aconteceu com nossos testes?
+
+Os resultados obtidos foram um tanto controversos com o que a equipe esperava obter, então tivemos que recorrer ao professor para que ele nos auxiliasse. Após uma revisão, tanto nos parâmetros utilizados pelos alunos, quanto para como o simulador cache-sim estava se comportando, chegamos a conclusão de que:
+
+* Padrão random: Distribuiu os acessos de forma perfeitamente uniforme entre todos os conjuntos. Ele não criou os "pontos quentes" desbalanceados do mundo real.
+* Padrão sequential: Também criou um padrão previsível, que não simula esse desbalanceamento.
+
+Ou seja, a associatividade maior (4-way, 8-way) pode parecer ter menos efeito em nossos testes random do que teria no mundo real.
+
+**Motivo**: Nossos testes não simularam a principal condição que a associatividade foi criada para resolver: **o desbalanceamento caótico da carga de trabalho** no mundo real.
+
+No mundo real, os acessos à memória **são caóticos e imprevisíveis**. Múltiplas variáveis, threads e funções competem pelos mesmos recursos.
+Alguns conjuntos da cache ficam **sobrecarregados** ("pontos quentes"), enquanto outros ficam quase vazios. A associatividade N-way (ex: 8-way) permite que aquele conjunto sobrecarregado **armazene até 8 blocos diferentes, mitigando os misses de conflito**.
+
 
 ## 6. Análise dos Gráficos Gerados
 
@@ -76,7 +95,7 @@ Por quê? Isso prova nossa hipótese do Stride. A falta de flexibilidade combina
 
 A Solução: A cache 8-way mitiga isso. Ela também sofre (o Miss Ratio sobe), mas sua flexibilidade impede o colapso de 100%, pelo menos até 64KB.
 
-#### B. Padrão de Acesso Aleatório
+##### B. Padrão de Acesso Aleatório
 
 Na realidade: O acesso aleatório é o pior inimigo da cache. O Miss Ratio começa a crescer para todas as caches a partir do momento em que a carga atinge o limite (32 KB).
 

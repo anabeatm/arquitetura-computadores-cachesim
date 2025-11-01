@@ -31,7 +31,7 @@ A Associatividade elevada (4-way e 8-way) reduzirá significativamente o **Miss 
 | **Padrão de Acesso** | `stride` (Passo) | **8192** | Valor estratégico que força o **pior cenário de Conflito** na cache 1-way (512 sets x 64 linesize = 32768 B / 4 sets = 8192 B). |
 | **Padrão de Acesso** | `write ratio` | 50 | Carga de trabalho balanceada (50% leitura/escrita). |
 | **Cache** | `linesize` | 64 | Tamanho do bloco padrão (64 bytes). |
-| **Comando** | `número de acessos` | 10000 | Garante estatísticas robustas. |
+| **Comando** | `número de acessos` | 10.000.000 | Garante estatísticas robustas. |
 
 ### 2. Configurações XML (Manutenção do Tamanho Fixo)
 
