@@ -13,7 +13,7 @@ Este repositório contém os arquivos de configuração, o executável do simula
 O experimento foi projetado como um estudo bidimensional, variando os seguintes parâmetros:
 
 1.  **Associatividade (Estrutura da Cache):** 1-way, 2-way, 4-way e 8-way.
-2.  **Buffer Size (Carga de Trabalho):** 8KB, 16 KB, 32 KB e 65KB.
+2.  **Buffer Size (Carga de Trabalho):** 8KB, 16 KB, 32 KB e 64KB.
 
 ### Hipótese
 
@@ -66,3 +66,4 @@ O comando deve seguir o formato abaixo no terminal MSYS2 UCRT64:
 
 ```bash
 ./cache-sim.exe [xml_config] [padrao] [acessos] [buffer_size] [stride] [write_ratio]
+
