@@ -66,6 +66,4 @@ O comando deve seguir o formato abaixo no terminal MSYS2 UCRT64:
 
 ```bash
 ./cache-sim.exe [xml_config] [padrao] [acessos] [buffer_size] [stride] [write_ratio]
-
-
-
+```
